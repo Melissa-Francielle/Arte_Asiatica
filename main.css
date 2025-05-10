@@ -1,0 +1,257 @@
+/* Cores base */
+:root {
+  --preto-principal: #151618;
+  --fundo-claro: #f7ece6;
+  --preto-secundario: #0d0d0f;
+  --dourado-suave: #caa07d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--preto-principal);
+  color: var(--dourado-suave);
+  font-family: 'Georgia', serif;
+  position: relative; /* Permite posicionamento absoluto dos filhos */
+  overflow-x: hidden; /* Evita barra de rolagem horizontal */
+}
+
+/* Caractere chinês de fundo */
+body::before {
+  content: "開";
+  position: fixed;
+  font-size: 900px; /* Tamanho aproximado do seu design */
+  opacity: 0.19; /* 19% de opacidade */
+  color: var(--dourado-suave); /* Usando sua cor dourada */
+  z-index: -1; /* Fica atrás de todo conteúdo */
+  top: -300px; /* Posicionamento vertical */
+  left: -400px; /* Posicionamento horizontal */
+  font-family: 'Noto Sans SC', sans-serif; /* Fonte que suporte caracteres chineses */
+  line-height: 1;
+  pointer-events: none; /* Permite interação com elementos abaixo */
+}
+
+body::after {
+  content: "頭";
+  position: fixed;
+  font-size: 900px;
+  opacity: 0.19;
+  color: var(--dourado-suave);
+  z-index: -1;
+  top: 300px;  /* Nova posição vertical */
+  left: 817px; /* Nova posição horizontal */
+  font-family: 'Noto Sans SC', sans-serif;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.intro {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+}
+
+.texto-intro {
+    flex: 1; 
+    text-align: left; 
+}
+
+.imagem-intro {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--dourado-suave);
+  width: 80%; /* Largura da navbar */
+  margin: 0 auto; /* Centraliza */
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navbar a {
+  color: var(--fundo-claro); 
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a:focus,
+.navbar a:active {
+  color: var(--dourado-suave); 
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+
+.hero {
+  padding: 2rem;
+}
+
+.texto-intro h1 {
+  font-size: 5rem;
+  margin-left: 8rem;
+  color: var(--dourado-suave);
+}
+
+.texto-intro p {
+  margin-top: 1rem;
+  margin-left: 8rem;
+  font-size: 1rem;
+  color: #caa07d;
+  max-width: 600px;
+}
+
+.imagem-intro img {
+  width: 500px; /* Aumentei de 300px para 500px */
+  height: auto; /* Mantém a proporção original */
+  margin-top: 2rem;
+  margin-right: 10rem; /* Reduzi esta margem para compensar o aumento */
+  border-radius: 50%;
+  border: 2px solid var(--dourado-suave); /* Borda mais espessa */
+  transition: transform 0.3s ease; /* Adicionei animação suave */
+}
+
+/* Efeito opcional ao passar o mouse */
+.imagem-intro img:hover {
+  transform: scale(1.05); /* Aumenta levemente no hover */
+}
+
+.conteudo {
+  background-color: var(--fundo-claro);
+  color: var(--preto-principal);
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 90%; /* Controla a largura máxima do bloco */
+  margin-left: auto; /* Centraliza o bloco */
+  margin-right: auto; /* Centraliza o bloco */
+  width: fit-content; /* Faz o bloco se ajustar ao conteúdo interno */
+}
+
+/* Adicione estas regras ao final do seu arquivo CSS */
+
+.conteudo .imagens {
+    flex: 1;
+    display: flex;
+    position: relative; /* Permite posicionamento absoluto dos filhos */
+    justify-content: flex-start; /* Alinha à esquerda */
+    align-items: flex-start;
+    margin-left: 2rem;
+}
+
+.conteudo .imagens img:first-child {
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px; /* Borda levemente arredondada para o retângulo */
+    border: 2px solid var(--preto-secundario);
+}
+
+.conteudo .imagens img:last-child {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--preto-secundario);
+    position: absolute;
+    bottom: -20px; /* Ajuste para posicionar na parte inferior */
+    right: 320px; /* Ajuste para posicionar no canto direito */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+}
+
+.conteudo .bloco {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: space-between;
+    max-width: 1200px; /* ou qualquer valor que você preferir */
+    margin: 0 auto; /* isso centraliza o bloco */
+    width: 90%; /* ocupa 90% do container pai */
+}
+
+.conteudo .texto {
+    flex: 1;
+    text-align: left; 
+}
+
+.conteudo .imagens {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.conteudo .imagens img {
+    max-width: 100%;
+    height: auto;
+}
+
+.bloco .texto {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.bloco button {
+  background-color: var(--preto-secundario);
+  color: var(--fundo-claro);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  margin-top: 2rem;
+  margin-left: 10rem;
+  font-size: 1.5rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+}
+
+.bloco .imagens {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.bloco .imagens img {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid var(--preto-secundario);
+}
+
+.japanese {
+  position: relative;
+  margin-top: 3rem;
+  margin-right: 850px;
+  text-align: center;
+}
+
+.texto-container {
+  position: relative;
+  display: inline-block;
+}
+
+.texto-textura {
+  width: 350px; /* ou qualquer valor desejado */
+  height: auto; /* mantém a proporção original */
+  display: block;
+  position: relative;
+  z-index: 2;
+}
